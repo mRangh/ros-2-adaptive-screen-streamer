@@ -20,7 +20,7 @@ def setup_network() -> None:
             <AllowMulticast>false</AllowMulticast>
         </General>
         <Internal>
-            <SocketReceiveBufferSize>10485760</SocketReceiveBufferSize>
+            <SocketReceiveBufferSize min="8MB"/>
         </Internal>
         <Discovery>
             <Peers>
@@ -48,8 +48,8 @@ def main(args=None):
 
     import rclpy
     from rclpy.executors import MultiThreadedExecutor
-    from screen_publisher import ScreenPublisher 
-    from screen_subscriber import ScreenSubscriber
+    from screen_streamer import ScreenPublisher 
+    from screen_streamer import ScreenSubscriber
 
     rclpy.init(args=args)
 
