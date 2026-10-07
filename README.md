@@ -31,40 +31,37 @@ Frame QoS is `BEST_EFFORT` with `KEEP_LAST` and depth 1: late frames are dropped
   - `mss`
   - `numpy`
 
-Install everything with [`install_deps.sh`](https://github.com/mRangh/ros-2-adaptive-screen-streamer/blob/main/install_deps.sh):
-
-    chmod +x install_deps.sh && ./install_deps.sh
+All dependencies are installed by [`install_deps.sh`](https://github.com/mRangh/ros-2-adaptive-screen-streamer/blob/main/install_deps.sh) (see Usage).
 
 ## Project structure
 
 ```
-.
-└── screen_streamer/
-    ├── LICENSE
-    ├── README.md
-    ├── install_deps.sh
-    ├── package.xml
-    ├── setup.py
-    ├── setup.cfg
-    ├── resource/screen_streamer
-    └── screen_streamer/
-        ├── __init__.py
-        ├── config.py
-        ├── screen_publisher.py
-        ├── screen_subscriber.py
-        └── main.py
+screen_streamer/          # repository root (cloned as screen_streamer)
+├── LICENSE
+├── README.md
+├── install_deps.sh
+├── package.xml
+├── setup.py
+├── setup.cfg
+├── resource/screen_streamer
+└── screen_streamer/      # Python package
+    ├── __init__.py
+    ├── config.py
+    ├── screen_publisher.py
+    ├── screen_subscriber.py
+    └── main.py
 ```
 
 ## Usage
 
-First, ready the ROS 2 architecture:
+First, create a ROS 2 workspace and clone the repository:
 
 ```bash
-   mkdir -p ~/ros2_ws/src && cd ~/ros2_ws/src
-   git clone https://github.com/mRangh/ros-2-adaptive-screen-streamer.git screen_streamer
-   cd screen_streamer
-   chmod +x install_deps.sh && ./install_deps.sh
-   cd ~/ros2_ws
+mkdir -p ~/ros2_ws/src && cd ~/ros2_ws/src
+git clone https://github.com/mRangh/ros-2-adaptive-screen-streamer.git screen_streamer
+cd screen_streamer
+chmod +x install_deps.sh && ./install_deps.sh
+cd ~/ros2_ws
 ```
 
 Then, build and source ROS 2 before running:
